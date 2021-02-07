@@ -47,6 +47,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- 爬虫，解析网页信息的包，如果要解析视频，要用 tika包 start -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+        <!-- end -->
     </dependencies>
 
     <build>
