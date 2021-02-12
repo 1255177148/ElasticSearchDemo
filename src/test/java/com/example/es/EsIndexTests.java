@@ -48,7 +48,7 @@ class EsIndexTests {
 
     @Test
     void deleteIndex() throws IOException {
-        DeleteIndexRequest request = new DeleteIndexRequest("demo");
+        DeleteIndexRequest request = new DeleteIndexRequest("jd");
         AcknowledgedResponse response = restHighLevelClient.indices().delete(request, RequestOptions.DEFAULT);
         System.out.println(JSON.toJSONString(response));
         System.out.println(response.isAcknowledged());

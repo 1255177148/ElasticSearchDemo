@@ -1,4 +1,4 @@
-package com.example.es.util.reptile;
+package com.example.es.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

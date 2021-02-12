@@ -55,6 +55,11 @@
             <version>1.13.1</version>
         </dependency>
         <!-- end -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

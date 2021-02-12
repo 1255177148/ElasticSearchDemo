@@ -1,5 +1,6 @@
 package com.example.es.util.reptile;
 
+import com.example.es.entity.Content;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

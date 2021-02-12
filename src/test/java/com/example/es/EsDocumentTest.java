@@ -21,6 +21,7 @@ import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.TermQueryBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.junit.jupiter.api.Test;
@@ -159,6 +160,9 @@ public class EsDocumentTest {
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         // 创建查询构建器
 
+        // 使用term来进行倒排索引查询
+        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("name", "三");
+
         // 类似sql语句的  where name = 1 and name = 2
         BoolQueryBuilder name = QueryBuilders.boolQuery()
                 .must(QueryBuilders.matchQuery("name", "1"))
@@ -174,7 +178,7 @@ public class EsDocumentTest {
                 .mustNot(QueryBuilders.matchQuery("name", "1"))
                 .mustNot(QueryBuilders.matchQuery("name", "2"));
 
-        searchSourceBuilder.query(name2);
+        searchSourceBuilder.query(termQueryBuilder);
         // 构建高亮
         HighlightBuilder highlightBuilder = new HighlightBuilder();
         highlightBuilder.preTags("<p class='key' style='color:red'>");
