@@ -27,7 +27,7 @@ class EsIndexTests {
      * 创建索引
      */
     @Test
-    void creatIndex() throws IOException {
+    void createIndex() throws IOException {
         // 1、创建一个索引请求
         CreateIndexRequest request = new CreateIndexRequest("demo");
         // 2、客户端执行请求
